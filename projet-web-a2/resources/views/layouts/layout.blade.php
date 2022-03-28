@@ -14,7 +14,7 @@
 
     <link rel="stylesheet" href="https://cdn.iconmonstr.com/1.3.0/css/iconmonstr-iconic-font.min.css" />
 
-    <title>Cesi Intership</title>
+    <title>Cesi Internship</title>
 </head>
 
 <body>
