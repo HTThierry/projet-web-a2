@@ -1,4 +1,4 @@
-@extends('layouts/layout')
+@extends('./layouts/layout')
 
 @section('content')
 <div class="text-center">
@@ -81,6 +81,12 @@
                 </div>
             </div>
         </form>
+        <legend>Affichage des sites existants :</legend>
+        <select class="form-select" aria-label="Default select example">
+            <option selected>Site 1</option>
+            <option value="1">Site 2</option>
+            <option value="2">Site 3</option>
+        </select>
     </fieldset>
 </div>
 @endsection
