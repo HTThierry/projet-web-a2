@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="text-center">
-    <p class="h1">Nom Prénom</p></br>
+    <p class="h1">Name Surname</p></br>
 </div>
 <form>
     <div class="d-flex flex-row bd-highlight mb-3">
@@ -13,24 +13,24 @@
     </div>
     <div class="d-flex flex-row bd-highlight mb-3">
         <div class="p-2 bd-highlight">
-            Numéro de téléphone :<br>
-            <strong>Téléphone</strong>
+            Phone number :<br>
+            <strong>Phone</strong>
         </div>
     </div>
     <div class="p-2">
         <fieldset class="p-2 border border-primary">
-            <legend>Adresse :</legend>
+            <legend>Address :</legend>
             <div class="d-flex bd-highlight">
                 <div class="p-2 bd-highlight">
-                    Pays : <br>
+                    Country : <br>
                     <strong>Value</strong>
                 </div>
                 <div class="p-2 bd-highlight">
-                    Ville : <br>
+                    City : <br>
                     <strong>Value</strong>
                 </div>
                 <div class="p-2 flex-grow-1 bd-highlight">
-                    Adresse : <br>
+                    Address : <br>
                     <strong>Value</strong>
                 </div>
             </div>
@@ -39,11 +39,11 @@
 
     <div class="d-flex flex-row bd-highlight mb-3">
         <div class="p-2 bd-highlight flex-fill">
-            Centre :<br>
+            Site :<br>
             <strong>value</strong>
         </div>
         <div class="p-2 bd-highlight flex-fill">
-            Promotion :<br>
+            Class :<br>
             <strong>Value</strong>
         </div>
     </div>

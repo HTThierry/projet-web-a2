@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="text-center">
-    <p class="h1">Délégation</p></br>
+    <p class="h1">Authorizations</p></br>
 </div>
 
 <form>
@@ -16,7 +16,7 @@
                 Description
             </div>
             <div class="col-md-auto  border border-primary">
-                Autorisation
+                Allowed
             </div>
         </div>
         <div class="row">
@@ -24,7 +24,7 @@
                 2
             </div>
             <div class="col  border border-primary">
-                Rechercher une entreprise
+                Search for a Company
             </div>
             <div class="col-md-auto  border border-primary">
                 <div class="form-check form-switch">
@@ -37,7 +37,7 @@
                 3
             </div>
             <div class="col  border border-primary">
-                Créer une entreprise
+                Create a company
             </div>
             <div class="col-md-auto  border border-primary">
                 <div class="form-check form-switch">
@@ -50,7 +50,7 @@
                 4
             </div>
             <div class="col  border border-primary">
-                Modifier une entreprise
+                Modify a company
             </div>
             <div class="col-md-auto border border-primary">
                 <div class="form-check form-switch">
@@ -63,7 +63,7 @@
                 6
             </div>
             <div class="col  border border-primary">
-                Supprimer une entreprise
+                Delete a company
             </div>
             <div class="col-md-auto border border-primary">
                 <div class="form-check form-switch">
@@ -76,7 +76,7 @@
                 9
             </div>
             <div class="col  border border-primary">
-                Créer une offre
+                Create an offer
             </div>
             <div class="col-md-auto border border-primary">
                 <div class="form-check form-switch">
@@ -89,7 +89,7 @@
                 10
             </div>
             <div class="col  border border-primary">
-                Modifier une offre
+                Modify an offer
             </div>
             <div class="col-md-auto border border-primary">
                 <div class="form-check form-switch">
@@ -102,7 +102,7 @@
                 11
             </div>
             <div class="col  border border-primary">
-                Supprimer une offre
+                Delete an offer
             </div>
             <div class="col-md-auto border border-primary">
                 <div class="form-check form-switch">
@@ -115,7 +115,7 @@
                 13
             </div>
             <div class="col  border border-primary">
-                Rechercher un compte pilote
+                Search for a tutor account
             </div>
             <div class="col-md-auto border border-primary">
                 <div class="form-check form-switch">
@@ -128,7 +128,7 @@
                 14
             </div>
             <div class="col  border border-primary">
-                Créer un compte pilote
+                create a tutor account
             </div>
             <div class="col-md-auto border border-primary">
                 <div class="form-check form-switch">
@@ -141,7 +141,7 @@
                 15
             </div>
             <div class="col  border border-primary">
-                Modifier un compte pilote
+                Modify a tutor account
             </div>
             <div class="col-md-auto border border-primary">
                 <div class="form-check form-switch">
@@ -154,7 +154,7 @@
                 16
             </div>
             <div class="col  border border-primary">
-                Supprimer un compte pilote
+                Delete a tutor account
             </div>
             <div class="col-md-auto border border-primary">
                 <div class="form-check form-switch">
@@ -167,7 +167,7 @@
                 22
             </div>
             <div class="col  border border-primary">
-                Rechercher un compte étudiant
+                Search for a student account
             </div>
             <div class="col-md-auto border border-primary">
                 <div class="form-check form-switch">
@@ -180,7 +180,7 @@
                 23
             </div>
             <div class="col  border border-primary">
-                Créer un compte étudiant
+                Create a student account
             </div>
             <div class="col-md-auto border border-primary">
                 <div class="form-check form-switch">
@@ -193,7 +193,7 @@
                 24
             </div>
             <div class="col  border border-primary">
-                Modifier un compte étudiant
+                Modify a student account
             </div>
             <div class="col-md-auto border border-primary">
                 <div class="form-check form-switch">
@@ -206,7 +206,7 @@
                 25
             </div>
             <div class="col  border border-primary">
-                Supprimer un compte étudiant
+                Delete a student account
             </div>
             <div class="col-md-auto border border-primary">
                 <div class="form-check form-switch">
@@ -219,7 +219,7 @@
                 26
             </div>
             <div class="col  border border-primary">
-                Consulter les stats des étudiants
+                Consult a student's stats
             </div>
             <div class="col-md-auto border border-primary">
                 <div class="form-check form-switch">
@@ -232,7 +232,7 @@
                 32
             </div>
             <div class="col  border border-primary">
-                Informer le système de l'avancement de la candidature step 3
+                Inform the system about candidacy's advancement to step 3
             </div>
             <div class="col-md-auto border border-primary">
                 <div class="form-check form-switch">
@@ -245,7 +245,7 @@
                 33
             </div>
             <div class="col  border border-primary">
-                Informer le système de l'avancement de la candidature step 4
+                Inform the system about candidacy's advancement to step 4
             </div>
             <div class="col-md-auto border border-primary">
                 <div class="form-check form-switch">

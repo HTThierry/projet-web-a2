@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="text-center">
-    <p class="h1">Modification de compte étudiant :</p></br>
+    <p class="h1">Student account modification :</p></br>
 </div>
 <form method="post" action="{{ route('student.update', $id)}}">
     @csrf
@@ -14,11 +14,11 @@
     @foreach($users as $user)
     <div class="d-flex flex-row bd-highlight mb-3">
         <div class="p-2 bd-highlight flex-fill">
-            Nom :<br>
+            Name :<br>
             <input type="text" class="form-control" placeholder="{{$user->last_name}}" value="{{$user->last_name}}" name="last_name">
         </div>
         <div class="p-2 bd-highlight flex-fill">
-            Prénom :<br>
+            Surname :<br>
             <input type="text" class="form-control" placeholder="{{$user->first_name}}" value="{{$user->first_name}}" name="first_name">
         </div>
     </div>
@@ -34,24 +34,24 @@
     </div>
     <div class="d-flex flex-row bd-highlight mb-3">
         <div class="p-2 bd-highlight flex-fill">
-            Ancien mot de passe :<br>
+            Old password :<br>
             <input type="password" class="form-control" placeholder="{{$user->password}}" value="{{$user->password}}" name="password">
         </div>
         <div class="p-2 bd-highlight flex-fill">
-            Nouveau mot de passe :<br>
+            New password :<br>
             <input type="password" class="form-control" placeholder="confirmez le nouveau mot de passe ou l'ancien si inchangé" name="passwordControl">
         </div>
     </div>
     <div class="d-flex flex-row bd-highlight mb-3">
         <div class="p-2 bd-highlight">
-            Numéro de téléphone :<br>
+            Phone number :<br>
             <input type="tel" class="form-control" placeholder="{{$user->phone_number}}" value="{{$user->phone_number}}" name="phone_number">
         </div>
     </div>
 
     <div class="d-flex flex-row bd-highlight mb-3">
         <div class="p-2 bd-highlight flex-fill">
-            Centre : (actuellement oldValue)<br>
+            Site : (currently oldValue)<br>
             <select class="form-select" aria-label="Default select example" name="center">
                 <option value="{{$center}}" selected>{{$center}}</option>
                 @foreach($centers as $center)
@@ -60,7 +60,7 @@
             </select>
         </div>
         <div class="p-2 bd-highlight flex-fill">
-            Promotion : (actuellement oldValue)<br>
+            Class : (currently oldValue)<br>
             <select class="form-select" aria-label="Default select example" name="class_promotion">
                 <option value="{{$class_promotion}}" selected>{{$class_promotion}}</option>
                 @foreach($class_promotions as $class_promotion)
@@ -70,14 +70,14 @@
         </div>
     </div>
     <div class="p-2">
-        <button type="submit" class="btn btn-primary">Modifier</button>
+        <button type="submit" class="btn btn-primary">Modify</button>
     </div>
     @endforeach
 </form>
 <div class="p-2">
     <form action="{{route('student.delete', $id)}}" method="post">
         @csrf
-        <button type="submit" class="btn btn-danger">Supprimer</button> <!-- confirmer la suppression avec une popup peut être à voir -->
+        <button type="submit" class="btn btn-danger">Delete</button> <!-- confirmer la suppression avec une popup peut être à voir -->
     </form>
 </div>
 
