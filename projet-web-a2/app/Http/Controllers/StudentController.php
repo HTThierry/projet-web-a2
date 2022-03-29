@@ -10,11 +10,11 @@ use App\Models\centers;
 
 class StudentController extends Controller
 {
-    public function index()
+    public function create()
     {
         $centers = DB::table('centers')->get();
         $class_promotions = DB::table('class_promotions')->get();
-        return view('creation-etudiant', [
+        return view('creation/creation-student', [
             'centers' => $centers,
             'class_promotions' => $class_promotions
         ]);
@@ -69,9 +69,22 @@ class StudentController extends Controller
 
         $centers = DB::table('centers')->get();
         $class_promotions = DB::table('class_promotions')->get();
-        return view('creation-etudiant', [
+        return view('creation/creation-student', [
             'centers' => $centers,
             'class_promotions' => $class_promotions
         ]);;
+    }
+    public function update($id)
+    {
+        $users = DB::table('users')
+            ->where('id_user','=', $id)
+            ->get();
+        $centers = DB::table('centers')->get();
+        $class_promotions = DB::table('class_promotions')->get();
+        return view('modification/modif-student', [
+            'centers' => $centers,
+            'class_promotions' => $class_promotions,
+            'users' => $users
+        ]);
     }
 }

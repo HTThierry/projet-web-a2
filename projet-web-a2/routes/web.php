@@ -14,7 +14,10 @@ use App\Http\Controllers\StudentController;
 |
 */
 
-Route::get('/', function () {return view('example');});
-// Student
-Route::get('/creation/student', [StudentController::class, 'index']);
+Route::get('/', function () {return view('index');});
+// Student ------------------------------------------
+// Create
+Route::get('/creation/student', [StudentController::class, 'create']);
 Route::post('/creation/student', [StudentController::class, 'store'])->name('student.store');
+// Update
+Route::get('/update/student/{id}', [StudentController::class, 'update']);
