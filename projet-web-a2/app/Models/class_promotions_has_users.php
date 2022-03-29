@@ -5,13 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class centers extends Model
+class class_promotions_has_users extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'title',
-        'city',
-        'address'
+        'class_promotions_id_promotion',
+        'users_id_user'
     ];
+
+    public $timestamps = false;
 }
