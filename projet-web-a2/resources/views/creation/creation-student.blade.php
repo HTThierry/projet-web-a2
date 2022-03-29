@@ -14,11 +14,11 @@
     <div class="d-flex flex-row bd-highlight mb-3">
         <div class="p-2 bd-highlight flex-fill">
             Nom :<br>
-            <input type="text" class="form-control" name="first_name">
+            <input type="text" class="form-control" name="last_name">
         </div>
         <div class="p-2 bd-highlight flex-fill">
             Prénom :<br>
-            <input type="text" class="form-control" name="last_name">
+            <input type="text" class="form-control" name="first_name">
         </div>
     </div>
     <div class="d-flex flex-row bd-highlight mb-3">
@@ -52,7 +52,7 @@
         <div class="p-2 bd-highlight flex-fill">
             Centre :<br>
             <select class="form-select" aria-label="Default select example" name="center">
-                <option selected>Choisir :</option>
+                <option selected value=>Choisir :</option>
                 @foreach($centers as $center)
                     <option value="{{$center->title}}">{{$center->title}}</option>
                 @endforeach
@@ -61,7 +61,7 @@
         <div class="p-2 bd-highlight flex-fill">
             Promotion :<br>
             <select class="form-select" aria-label="Default select example" name="class_promotion">
-                <option selected>Choisir :</option>
+                <option selected value=>Choisir :</option>
                 @foreach($class_promotions as $class_promotion)
                     <option value="{{$class_promotion->title}}">{{$class_promotion->title}}</option>
                 @endforeach

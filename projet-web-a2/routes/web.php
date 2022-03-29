@@ -20,4 +20,7 @@ Route::get('/', function () {return view('index');});
 Route::get('/creation/student', [StudentController::class, 'create']);
 Route::post('/creation/student', [StudentController::class, 'store'])->name('student.store');
 // Update
-Route::get('/update/student/{id}', [StudentController::class, 'update']);
+Route::get('/update/student/{id}', [StudentController::class, 'updateView']);
+Route::post('/update/student/{id}', [StudentController::class, 'update'])->name('student.update');
+// Delete
+Route::post('/delete/student/{id}', [StudentController::class, 'delete'])->name('student.delete');
