@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
@@ -9,19 +10,19 @@ use App\Models\class_promotions_has_users;
 use App\Models\centers_has_users;
 use App\Models\centers;
 
-class StudentController extends Controller
+class TutorController extends Controller
 {
     public function show()
     {
-        $idRole = (DB::table('roles')->where('title','=','eleve')->get('id_role'))[0]->id_role;
-        $students = users::OrderBy('last_name')->where('roles_id_role','=',$idRole)->get();
-        return view('list/studentList',['students' => $students]);
+        $idRole = (DB::table('roles')->where('title','=','tuteur')->get('id_role'))[0]->id_role;
+        $tutors = users::OrderBy('last_name')->where('roles_id_role','=',$idRole)->get();
+        return view('list/tutorList',['tutors' => $tutors]);
     }
     public function create()
     {
         $centers = DB::table('centers')->get();
         $class_promotions = DB::table('class_promotions')->get();
-        return view('creation/creation-student', [
+        return view('creation/creation-tutor', [
             'centers' => $centers,
             'class_promotions' => $class_promotions
         ]);
@@ -31,7 +32,7 @@ class StudentController extends Controller
     {
         //dd($request);
 
-        $idRole = (DB::table('roles')->where('title','=','eleve')->get('id_role'))[0]->id_role;
+        $idRole = (DB::table('roles')->where('title','=','tuteur')->get('id_role'))[0]->id_role;
         
         $request->validate([
             'first_name' => ['required'],
@@ -78,8 +79,9 @@ class StudentController extends Controller
             'users_id_user' => $userId[0]->id_user
         ]);
 
-        return redirect('/creation/student');
+        return redirect('/creation/tutor');
     }
+
     public function updateView($id)
     {
         $users = DB::table('users')
@@ -109,7 +111,7 @@ class StudentController extends Controller
         $class_promotions = DB::table('class_promotions')->get();
 
         //-------------------------------------------
-        return view('modification/modif-student', [
+        return view('modification/modif-tutor', [
             'centers' => $centers,
             'center' => $center[0]->title,
 
@@ -167,7 +169,7 @@ class StudentController extends Controller
             'users_id_user'=>$id
         ]);
         
-        return redirect('/show/student');
+        return redirect('/show/tutor');
     }
 
     public function delete($id) {
@@ -181,6 +183,6 @@ class StudentController extends Controller
         $class_promotions_has_users = class_promotions_has_users::where('users_id_user','=', $id);
         $class_promotions_has_users->delete();
 
-        return redirect('/show/student');
+        return redirect('/show/tutor');
     }
 }

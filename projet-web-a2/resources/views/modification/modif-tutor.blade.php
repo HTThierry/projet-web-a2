@@ -4,89 +4,81 @@
 <div class="text-center">
     <p class="h1">Tutor account modification :</p></br>
 </div>
-<form>
+<form method="post" action="{{ route('tutor.update', $id)}}">
+    @csrf
+    @if($errors->any())
+        @foreach($errors->all() as $error)
+            <div class="alert alert-danger">{{$error}}</div>
+        @endforeach
+    @endif
+    @foreach($users as $user)
     <div class="d-flex flex-row bd-highlight mb-3">
         <div class="p-2 bd-highlight flex-fill">
             Name :<br>
-            <input type="text" class="form-control" placeholder="oldValue">
+            <input type="text" class="form-control" placeholder="{{$user->last_name}}" value="{{$user->last_name}}" name="last_name">
         </div>
         <div class="p-2 bd-highlight flex-fill">
             Surname :<br>
-            <input type="text" class="form-control" placeholder="oldValue">
+            <input type="text" class="form-control" placeholder="{{$user->first_name}}" value="{{$user->first_name}}" name="first_name">
         </div>
     </div>
     <div class="d-flex flex-row bd-highlight mb-3">
         <div class="p-2 bd-highlight flex-fill">
             Username :<br>
-            <input type="text" class="form-control" placeholder="oldValue">
+            <input type="text" class="form-control" placeholder="{{$user->login}}" value="{{$user->login}}" name="login">
         </div>
         <div class="p-2 bd-highlight flex-fill">
             Email :<br>
-            <input type="email" class="form-control" placeholder="oldValue">
+            <input type="email" class="form-control" placeholder="{{$user->email}}" value="{{$user->email}}" name="email">
         </div>
     </div>
     <div class="d-flex flex-row bd-highlight mb-3">
         <div class="p-2 bd-highlight flex-fill">
-            Old password :<br>>
-            <input type="password" class="form-control">
+            New password :<br>
+            <input type="password" class="form-control" placeholder="{{$user->password}}" value="{{$user->password}}" name="password">
         </div>
         <div class="p-2 bd-highlight flex-fill">
-            New password :<br>
-            <input type="password" class="form-control">
+            Repeat password :<br>
+            <input type="password" class="form-control" placeholder="repeat your old one if there isn't any change" name="passwordControl">
         </div>
     </div>
     <div class="d-flex flex-row bd-highlight mb-3">
         <div class="p-2 bd-highlight">
             Phone number :<br>
-            <input type="tel" class="form-control" placeholder="oldValue">
+            <input type="tel" class="form-control" placeholder="{{$user->phone_number}}" value="{{$user->phone_number}}" name="phone_number">
         </div>
-    </div>
-    <div class="p-2">
-        <fieldset class="p-2 border border-primary">
-            <legend>Address :</legend>
-            <div class="d-flex bd-highlight">
-                <div class="p-2 bd-highlight">
-                    Country : <br>
-                    <input type="text" class="form-control" placeholder="oldValue">
-                </div>
-                <div class="p-2 bd-highlight">
-                    City : <br>
-                    <input type="text" class="form-control" placeholder="oldValue">
-                </div>
-                <div class="p-2 flex-grow-1 bd-highlight">
-                    Address : <br>
-                    <input type="text" class="form-control" placeholder="oldValue">
-                </div>
-            </div>
-        </fieldset>
     </div>
 
     <div class="d-flex flex-row bd-highlight mb-3">
         <div class="p-2 bd-highlight flex-fill">
             Site : (currently oldValue)<br>
-            <select class="form-select" aria-label="Default select example">
-                <option selected>Choisir :</option>
-                <option value="1">Pau</option>
-                <option value="2">Reims</option>
-                <option value="3">Paris</option>
+            <select class="form-select" aria-label="Default select example" name="center">
+                <option value="{{$center}}" selected>{{$center}}</option>
+                @foreach($centers as $center)
+                    <option value="{{$center->title}}">{{$center->title}}</option>
+                @endforeach
             </select>
         </div>
         <div class="p-2 bd-highlight flex-fill">
-            class(es) taken care of :<br>
-            <div class="form-check form-switch">
-                <input class="form-check-input" type="checkbox" role="switch" id="switchA1">
-                <label class="form-check-label" for="switchA1">A1</label>
-            </div>
-            <div class="form-check form-switch">
-                <input class="form-check-input" type="checkbox" role="switch" id="switchA2">
-                <label class="form-check-label" for="switchA2">A2 IT</label>
-            </div>
+        Take care of : (currently oldValue)<br>
+            <select class="form-select" aria-label="Default select example" name="class_promotion">
+                <option value="{{$class_promotion}}" selected>{{$class_promotion}}</option>
+                @foreach($class_promotions as $class_promotion)
+                    <option value="{{$class_promotion->title}}">{{$class_promotion->title}}</option>
+                @endforeach
+            </select>
         </div>
     </div>
     <div class="p-2">
         <button type="submit" class="btn btn-primary">Modify</button>
-        <button type="button" class="btn btn-danger">Delete</button> <!-- confirmer la suppression avec une popup peut être à voir -->
     </div>
+    @endforeach
 </form>
+<div class="p-2">
+    <form action="{{route('tutor.delete', $id)}}" method="post">
+        @csrf
+        <button type="submit" class="btn btn-danger">Delete</button> <!-- confirmer la suppression avec une popup peut être à voir -->
+    </form>
+</div>
 
 @endsection
