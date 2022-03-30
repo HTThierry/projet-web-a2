@@ -43,7 +43,7 @@
     </div>
     <div class="d-flex flex-row bd-highlight mb-3">
         <div class="p-2 bd-highlight">
-            Phone number :<br>>
+            Phone number :<br>
             <input type="tel" class="form-control" name="phone_number">
         </div>
     </div>

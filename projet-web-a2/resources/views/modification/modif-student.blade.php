@@ -34,12 +34,12 @@
     </div>
     <div class="d-flex flex-row bd-highlight mb-3">
         <div class="p-2 bd-highlight flex-fill">
-            Old password :<br>
+            New password :<br>
             <input type="password" class="form-control" placeholder="{{$user->password}}" value="{{$user->password}}" name="password">
         </div>
         <div class="p-2 bd-highlight flex-fill">
-            New password :<br>
-            <input type="password" class="form-control" placeholder="confirmez le nouveau mot de passe ou l'ancien si inchangé" name="passwordControl">
+            Repeat password :<br>
+            <input type="password" class="form-control" placeholder="repeat your old one if there isn't any change" name="passwordControl">
         </div>
     </div>
     <div class="d-flex flex-row bd-highlight mb-3">

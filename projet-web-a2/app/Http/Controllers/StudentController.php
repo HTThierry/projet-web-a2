@@ -24,6 +24,8 @@ class StudentController extends Controller
     public function store(Request $request)
     {
         //dd($request);
+
+        $idRole = 6;
         
         $request->validate([
             'first_name' => ['required'],
@@ -43,7 +45,7 @@ class StudentController extends Controller
             'phone_number' => $request->phone_number,
             'login' => $request->login,
             'password' => $request->password,
-            'roles_id_role' => "3"
+            'roles_id_role' => $idRole
         ]);
 
         $userId = DB::table('users')
