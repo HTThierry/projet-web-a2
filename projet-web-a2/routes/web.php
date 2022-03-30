@@ -15,9 +15,14 @@ use App\Http\Controllers\StudentController;
 */
 
 Route::get('/', function () {return view('index');});
+<<<<<<< Updated upstream
 // Student ------------------------------------------
 // Create
 Route::get('/creation/student', [StudentController::class, 'create']);
+=======
+// Student
+Route::get('/creation/student', [StudentController::class, 'index']);
+>>>>>>> Stashed changes
 Route::post('/creation/student', [StudentController::class, 'store'])->name('student.store');
 // Update
 Route::get('/update/student/{id}', [StudentController::class, 'updateView']);
