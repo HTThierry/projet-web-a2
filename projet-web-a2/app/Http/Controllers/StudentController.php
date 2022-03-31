@@ -7,7 +7,7 @@ use Illuminate\Http\RedirectResponse;
 use App\Models\users;
 use App\Models\class_promotions_has_users;
 use App\Models\centers_has_users;
-use App\Models\centers;
+//use App\Models\centers;
 
 class StudentController extends Controller
 {

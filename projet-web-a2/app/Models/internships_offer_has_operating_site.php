@@ -4,15 +4,15 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
-class business_sectors extends Model
+class internships_offer_has_operating_site extends Model
 {
     use HasFactory;
 
-    use softDeletes;
-
     protected $fillable = [
-        'title'
+        'internships_offer',
+        'operating_site'
     ];
+
+    public $timestamps = false;
 }

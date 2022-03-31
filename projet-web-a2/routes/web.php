@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TutorController;
+use App\Http\Controllers\EnterpriseController;
+use App\Http\Controllers\SectorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,3 +42,17 @@ Route::get('/update/tutor/{id}', [TutorController::class, 'updateView']);
 Route::post('/update/tutor/{id}', [TutorController::class, 'update'])->name('tutor.update');
 // Delete
 Route::post('/delete/tutor/{id}', [TutorController::class, 'delete'])->name('tutor.delete');
+
+// Enterprise ------------------------------------------
+Route::get('/creation/enterprise', [EnterpriseController::class,'create']);
+Route::post('/creation/enterprise', [EnterpriseController::class,'storeEnterprise'])->name('enterprise.store');
+
+// Sector ------------------------------------------
+// Create
+Route::get('/creation/sector', [SectorController::class,'create']);
+Route::post('/creation/sector', [SectorController::class, 'store'])->name('sector.store');
+//Read
+Route::get('/show/sector', [SectorController::class, 'show']);
+// Update
+Route::get('/update/sector/{id}', [SectorController::class, 'updateView']);
+Route::post('/update/sector/{id}', [SectorController::class, 'update'])->name('sector.update');
