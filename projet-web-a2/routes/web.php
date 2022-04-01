@@ -5,6 +5,7 @@ use App\Http\Controllers\StudentController;
 use App\Http\Controllers\TutorController;
 use App\Http\Controllers\EnterpriseController;
 use App\Http\Controllers\SectorController;
+use App\Http\Controllers\AuthenticationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -56,3 +57,8 @@ Route::get('/show/sector', [SectorController::class, 'show']);
 // Update
 Route::get('/update/sector/{id}', [SectorController::class, 'updateView']);
 Route::post('/update/sector/{id}', [SectorController::class, 'update'])->name('sector.update');
+
+//authentication --------------------------------
+//Route::get('/login', function(){ return view('sign-in');});
+Route::get('/login', [AuthenticationController::class, 'view']);
+Route::post('/login', [AuthenticationController::class, 'store'])->name('authenticate.store');
