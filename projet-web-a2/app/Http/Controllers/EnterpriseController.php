@@ -120,19 +120,54 @@ class EnterpriseController extends Controller
     public function updateView($id)
     {
         $sites = DB::table('operating_sites')->get();
+
+        $idBusinessSector = DB::table('enterprises_has_business_sectors')->where('enterprises', '=', $id)->get('business_sectors');
+        $sector = DB::table('business_sectors')->where('id_business_sector', '=', $idBusinessSector[0]->business_sectors)->get();
         $sectors = DB::table('business_sectors')->get();
+
         $enterprises = DB::table('enterprises')->get();
         $enterprise = DB::table('enterprises')->where('id_enterprise','=',$id)->get();
+
+        $contacts = DB::table('contacts')->where('enterprises_id_enterprise', '=', $id)->get();
+
+        $sites = DB::table('operating_sites')->where('enterprises_id_enterprise', '=', $id)->get();
+
+        $country= DB::table('countries')->where('id_country', '=', $id);
         $countries = DB::table('countries')->get();
 
         //dd($enterprise[0]->title);
+        //dd($enterprise);
+        //dd($contacts, $sectors);
+        //dd($sites);
         return view ('modification/modif-enterprise',[
             'sites' => $sites,
+            'sectorChoice' => $sector,
             'sectors' => $sectors,
-            'enterpriseChoice'=> $enterprise[0],
+
+            'enterpriseChoice'=> $enterprise,
             'enterprises' => $enterprises,
+
+            'contacts' => $contacts,
+
+            'sites' => $sites,
+
             'countries' => $countries,
             'id' => $id,
         ]);
+    }
+
+    public function updateEnterprise()
+    {
+        dd('enterprise');
+    }
+
+    public function updateContact()
+    {
+        dd('contact');
+    }
+
+    public function updateSite()
+    {
+        dd('site');
     }
 }

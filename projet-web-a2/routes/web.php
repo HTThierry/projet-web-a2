@@ -55,6 +55,8 @@ Route::get('/show/enterprises', [EnterpriseController::class, 'show']);
 //Update
 Route::get('/update/enterprise/{id}', [EnterpriseController::class, 'updateView']);
 Route::post('/update/enterprise/{id}', [EnterpriseController::class, 'updateEnterprise'])->name('enterprise.update');
+Route::post('/update/contact/{id}', [EnterpriseController::class, 'updateContact'])->name('contact.update');
+Route::post('/update/site/{id}', [EnterpriseController::class, 'updateSite'])->name('site.update');
 //Delete
 
 // Sector ------------------------------------------
