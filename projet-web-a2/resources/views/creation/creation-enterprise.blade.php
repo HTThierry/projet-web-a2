@@ -1,6 +1,23 @@
 @extends('./layouts/layout')
 
 @section('content')
+@php
+/*if(is_null(session()->get('loggedUserId')))
+{
+//echo "<script type='text/javascript'>alert('connect first');</script>";
+return redirect('/login');
+}*/
+
+
+$loggedUserId = session()->get('loggedUserId');
+
+$loggedUserId = $loggedUserId[0]-> id_user;
+
+$loggedUserRoleId = (DB::table('users')->where('id_user', '=', $loggedUserId)->get('roles_id_role'));
+$loggedUserRoleId = $loggedUserRoleId[0]-> roles_id_role;
+
+@endphp
+@if (DB::table('roles_has_permissions')->where('roles_id_role','=',$loggedUserRoleId)->where('permissions_id_permission', '=', '3')->exists())
 <div class="text-center">
     <p class="h1">Company creation</p></br>
 </div>
@@ -159,4 +176,8 @@
     </fieldset>
 </div>
 <div class="p-5"></div>
+@else
+<strong>Access denied</strong>
+@endif
+
 @endsection

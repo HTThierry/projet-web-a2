@@ -43,6 +43,7 @@ class AuthenticationController extends Controller
                 $idUser = DB::table('users')->where('login', '=', $login)->get('id_user');
                 //dd($idUser);
                 session()->put('loggedUserId', $idUser);
+                
                 //dd(session()->get('loggedUserId'));
 
 
@@ -51,11 +52,15 @@ class AuthenticationController extends Controller
             else
             {
                 dd("Incorrect password");
+                //echo "<script type='text/javascript'>alert('Incorrect password');</script>";
+                return redirect('/login');
             }
         }
         else
         {
             dd("This username does not exist");
+            //echo "<script type='text/javascript'>alert('This username does not exist');</script>";
+            return redirect('/login');
         }
     }
 
@@ -77,7 +82,12 @@ class AuthenticationController extends Controller
         //session()->flash('password', $password);
 
         //session()->flash('user', $user);
+        return redirect('/');
+    }
 
+    public function disconnect()
+    {
+        session()->pull('loggedUserId');
         return redirect('/');
     }
 }

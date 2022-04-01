@@ -73,3 +73,4 @@ Route::post('/update/sector/{id}', [SectorController::class, 'update'])->name('s
 //Route::get('/login', function(){ return view('sign-in');});
 Route::get('/login', [AuthenticationController::class, 'view']);
 Route::post('/login', [AuthenticationController::class, 'store'])->name('authenticate.store');
+Route::get('/disconnect', [authenticationController::class, 'disconnect']);

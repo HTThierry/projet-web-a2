@@ -78,7 +78,14 @@
     </div>
     <div class="d-grid gap-2">
       <form method="get" action="#" class="d-flex">
+        @php
+        $loggedUserId = session()->get('loggedUserId')
+        @endphp
+        @if(is_null($loggedUserId))
         <a class="btn btn-outline-primary me-2 btn-sm my-2" href="/login">Login</a>
+        @else
+        <a class="btn btn-outline-primary me-2 btn-sm my-2" href="/disconnect">Disconnect</a>
+        @endif
       </form>
     </div>
     <!-- Fin du bouton de login -->
