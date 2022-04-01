@@ -10,6 +10,7 @@
           <div class="alert alert-danger">{{$error}}</div>
         @endforeach
       @endif
+      
     <fieldset class="p-2 border border-dark">
       <div class="bd-highlight">
         <div class="p-2 bd-highlight">
