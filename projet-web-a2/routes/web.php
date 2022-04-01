@@ -44,8 +44,17 @@ Route::post('/update/tutor/{id}', [TutorController::class, 'update'])->name('tut
 Route::post('/delete/tutor/{id}', [TutorController::class, 'delete'])->name('tutor.delete');
 
 // Enterprise ------------------------------------------
+// Create
 Route::get('/creation/enterprise', [EnterpriseController::class,'create']);
 Route::post('/creation/enterprise', [EnterpriseController::class,'storeEnterprise'])->name('enterprise.store');
+Route::post('/creation/contact', [EnterpriseController::class,'storeContact'])->name('contact.store');
+Route::post('/creation/site', [EnterpriseController::class,'storeSite'])->name('site.store');
+//Read
+Route::get('/show/enterprises', [EnterpriseController::class, 'show']);
+//Update
+Route::get('/update/enterprise/{id}', [EnterpriseController::class, 'updateView']);
+Route::post('/update/enterprise/{id}', [EnterpriseController::class, 'updateEnterprise'])->name('enterprise.update');
+//Delete
 
 // Sector ------------------------------------------
 // Create

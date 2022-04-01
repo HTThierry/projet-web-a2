@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('title', 90);
             $table->longText('description')->nullable();
             $table->string('picture', 255)->nullable();
-            $table->string('country', 90);
+            $table->string('country', 90)->nullable();
             $table->string('city', 90);
             $table->string('address', 255);
             $table->integer('contact_number')->nullable();

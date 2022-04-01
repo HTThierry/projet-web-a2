@@ -4,7 +4,7 @@
 <div class="text-center">
     <p class="h1">Student account creation :</p></br>
 </div>
-<form method="post" action="{{ route('student.store')}}">
+<form method="post" action="{{ route('student.store')}}" >
     @csrf
     @if($errors->any())
         @foreach($errors->all() as $error)

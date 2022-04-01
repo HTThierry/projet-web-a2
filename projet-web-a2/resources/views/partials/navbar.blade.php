@@ -35,7 +35,7 @@
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li>
-              <a href="#" class="dropdown-item">Compagnies list</a>
+              <a href="/show/enterprises" class="dropdown-item">Compagnies list</a>
             </li>
             <li>
               <a href="/creation/enterprise" class="dropdown-item">Create a compagny profile</a>

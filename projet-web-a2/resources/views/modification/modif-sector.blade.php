@@ -23,7 +23,7 @@
         </div>
         <div class="p-2 bd-highlight flex-fill">
             Update your sector here :<br>
-            <input type="text" class="form-control" placeholder="{{$sectorTitle}}" value="{{$sectorTitle}}" name="title">
+            <input type="text" class="form-control" placeholder="{{$sectorTitle->title}}" value="{{$sectorTitle->title}}" name="title">
         </div>
     </div>
     <div class="p-2">

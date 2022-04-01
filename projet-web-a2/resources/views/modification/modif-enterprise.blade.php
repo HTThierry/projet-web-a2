@@ -15,9 +15,9 @@
                 @endforeach
             @endif
             <div class="d-flex flex-row bd-highlight mb-3">
-                <div class="p-2 bd-highlight flex-fill">
+                <div class="p-2 bd-highlight flex-fill"><
                     Company name :<br>
-                    <input type="text" class="form-control" name="title">
+                    <input type="text" class="form-control" name="title" placeholder="{{$enterpriseChoice->title}}" value="{{$enterpriseChoice}}">
                 </div>
                 <div class="p-2 bd-highlight flex-fill">
                     Business sector :<br>
